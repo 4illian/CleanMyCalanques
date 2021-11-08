@@ -1,12 +1,12 @@
 FROM node:14.17.0
 
-WORKDIR /usr/src/app/back
+WORKDIR /usr/src/app/front
 
 COPY ["package.json", "package-lock.json*", "./"]
 
 RUN npm install
 
-EXPOSE 8080
+EXPOSE 3000
 
 COPY . .
 
