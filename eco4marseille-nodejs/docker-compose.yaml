@@ -1,0 +1,30 @@
+version: '3'
+services:
+  app:
+    build:
+      context: ./project
+    ports:
+      - "8080:8080"
+    networks:
+      - eco4marseille
+
+  db:
+    image: mysql:5.7
+    env_file: ./.env
+    environment:
+      MYSQL_DATABASE: $MYSQL_DATABASE
+      MYSQL_USER: $MYSQL_USER
+      MYSQL_PASSWORD: $MYSQL_PASSWORD
+      MYSQL_ROOT_PASSWORD: $MYSQL_ROOT_PASSWORD
+    ports:
+      - 3306:3306
+    volumes:
+      - my-db:/var/lib/mysql
+    networks:
+      - eco4marseille
+
+volumes:
+  my-db:
+networks:
+  eco4marseille:
+    driver: bridge
