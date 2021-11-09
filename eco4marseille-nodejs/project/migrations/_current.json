@@ -1,0 +1,127 @@
+{
+    "tables": {
+        "users": {
+            "tableName": "users",
+            "schema": {
+                "id": {
+                    "primaryKey": true,
+                    "autoIncrement": true,
+                    "field": "id",
+                    "seqType": "Sequelize.INTEGER"
+                },
+                "email": {
+                    "allowNull": false,
+                    "unique": true,
+                    "field": "email",
+                    "seqType": "Sequelize.STRING"
+                },
+                "username": {
+                    "allowNull": false,
+                    "field": "username",
+                    "seqType": "Sequelize.STRING"
+                },
+                "password": {
+                    "allowNull": false,
+                    "field": "password",
+                    "seqType": "Sequelize.STRING"
+                },
+                "createdAt": {
+                    "allowNull": false,
+                    "field": "createdAt",
+                    "seqType": "Sequelize.DATE"
+                },
+                "updatedAt": {
+                    "allowNull": false,
+                    "field": "updatedAt",
+                    "seqType": "Sequelize.DATE"
+                }
+            },
+            "indexes": []
+        },
+        "wastes": {
+            "tableName": "wastes",
+            "schema": {
+                "id": {
+                    "primaryKey": true,
+                    "autoIncrement": true,
+                    "field": "id",
+                    "seqType": "Sequelize.INTEGER"
+                },
+                "place": {
+                    "allowNull": false,
+                    "field": "place",
+                    "seqType": "Sequelize.STRING"
+                },
+                "userIdCreated": {
+                    "allowNull": false,
+                    "field": "userIdCreated",
+                    "seqType": "Sequelize.INTEGER"
+                },
+                "userIdCleaned": {
+                    "allowNull": true,
+                    "field": "userIdCleaned",
+                    "seqType": "Sequelize.INTEGER"
+                },
+                "pictureBefore": {
+                    "allowNull": true,
+                    "field": "pictureBefore",
+                    "seqType": "Sequelize.STRING"
+                },
+                "pictureAfter": {
+                    "allowNull": true,
+                    "field": "pictureAfter",
+                    "seqType": "Sequelize.STRING"
+                },
+                "longitude": {
+                    "allowNull": true,
+                    "field": "longitude",
+                    "seqType": "Sequelize.FLOAT"
+                },
+                "latitude": {
+                    "allowNull": true,
+                    "field": "latitude",
+                    "seqType": "Sequelize.FLOAT"
+                },
+                "cleaned": {
+                    "allowNull": false,
+                    "defaultValue": {
+                        "value": false
+                    },
+                    "field": "cleaned",
+                    "seqType": "Sequelize.BOOLEAN"
+                },
+                "createdAt": {
+                    "allowNull": false,
+                    "field": "createdAt",
+                    "seqType": "Sequelize.DATE"
+                },
+                "cleanedAt": {
+                    "allowNull": false,
+                    "field": "cleanedAt",
+                    "seqType": "Sequelize.DATE"
+                },
+                "updatedAt": {
+                    "allowNull": false,
+                    "field": "updatedAt",
+                    "seqType": "Sequelize.DATE"
+                },
+                "owner": {
+                    "allowNull": true,
+                    "references": {
+                        "model": "users",
+                        "key": "id"
+                    },
+                    "onDelete": "SET NULL",
+                    "onUpdate": "CASCADE",
+                    "field": "owner",
+                    "seqType": "Sequelize.INTEGER"
+                }
+            },
+            "indexes": []
+        }
+    },
+    "path": "/Users/serge/Documents/Serge/hackathon/CleanMyCalanques/eco4marseille-nodejs/project/migrations/_current.json",
+    "backupPath": "/Users/serge/Documents/Serge/hackathon/CleanMyCalanques/eco4marseille-nodejs/project/migrations/_current_bak.json",
+    "exists": false,
+    "revision": 1
+}
