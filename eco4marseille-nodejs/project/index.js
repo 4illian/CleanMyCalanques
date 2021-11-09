@@ -23,8 +23,16 @@ app.listen(port, () => {
 
 app.get("/users", userController.getAll);
 app.get("/users/:id", userController.findOneById);
-app.post("/users", userController.create);
+app.post("/register", userController.create);
 app.post("/login", userController.login);
 app.delete("/users/:id", userController.deleteUser);
 
+app.get("/wastes", wasteController.getAll);
+app.get("/wastes/:id", wasteController.findOneById);
 app.post("/wastes", auth, uploadFile, wasteController.create);
+app.delete("/wastes/:id", wasteController.deleteWaste);
+app.put("/wastes/:id", auth, wasteController.updateWaste);
+app.get("/wastesbyuser", auth, wasteController.wastesByUser);
+app.get("/nbofwastes", wasteController.nbOfWastes);
+app.get("/cleanedbyuser", auth, wasteController.cleanedByUser);
+app.get("/nbofcleans", wasteController.nbOfCleans);

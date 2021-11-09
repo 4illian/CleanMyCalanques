@@ -27,3 +27,86 @@ exports.create = async (req, res, next) => {
     }
   }
 };
+
+exports.getAll = async (req, res, next) => {
+  try {
+    const wastes = await model.waste.findAll({
+      include: { all: true, nested: true },
+    });
+    res.status(200).send(wastes);
+  } catch (e) {
+    throw "fail get all wastes";
+  }
+};
+
+exports.findOneById = async (req, res, next) => {
+  try {
+    const id = req.params.id;
+    console.log(id);
+
+    const waste = await model.waste.findOne({
+      where: { id: id },
+      include: { all: true, nested: true },
+    });
+    res.send(waste);
+  } catch (e) {
+    console.log(e);
+    throw "Waste not find";
+  }
+};
+
+exports.deleteWaste = async (req, res, next) => {
+  const data = req.params.id;
+  console.log(data);
+  try {
+    const waste = await model.waste.findOne({ where: { id: data } });
+    //console.log(user);
+    waste.destroy();
+    res.status(200).send(waste);
+  } catch (error) {
+    res.status(500).send({ error: error });
+  }
+};
+
+exports.updateWaste = async (req, res) => {
+  console.log(req.body);
+  const data = req.body;
+  console.log(data);
+  if (data.id) {
+    id = data.id;
+  }
+  id = req.params.id;
+  try {
+    const waste = await model.waste.update(data, { where: { id: id } });
+
+    res.status(200).send(waste);
+  } catch (e) {
+    res.status(500).send({ error: e });
+  }
+};
+
+exports.wastesByUser = async (req, res) => {
+  const id = req.user.dataValues.id;
+  const waste = await model.waste.findAndCountAll({
+    where: { userIdCreated: id },
+  });
+  res.send(waste);
+};
+
+exports.nbOfWastes = async (req, res) => {
+  const waste = await model.waste.findAndCountAll();
+  res.send(waste);
+};
+
+exports.cleanedByUser = async (req, res) => {
+  const id = req.user.dataValues.id;
+  const waste = await model.waste.findAndCountAll({
+    where: { userIdCleaned: id },
+  });
+  res.send(waste);
+};
+
+exports.nbOfCleans = async (req, res) => {
+  const waste = await model.waste.findAndCountAll({ where: { cleaned: true } });
+  res.send(waste);
+};

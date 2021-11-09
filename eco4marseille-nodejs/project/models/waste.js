@@ -10,7 +10,14 @@ module.exports = (sequelize, DataTypes) => {
     /* static associate(models) {} */
     static associate(models) {
       // define association here
-      waste.belongsTo(models.user, { foreignKey: "owner", as: "Owner" });
+      waste.belongsTo(models.user, {
+        foreignKey: "userIdCreated",
+        as: "Owner",
+      });
+      waste.belongsTo(models.user, {
+        foreignKey: "userIdCleaned",
+        as: "Cleaners",
+      });
       //waste.hasMany(models.pictures);
       //event.hasMany(models.interest);
 
@@ -57,6 +64,14 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.FLOAT,
         allowNull: true,
       },
+      distance: {
+        type: DataTypes.FLOAT,
+        allowNull: true,
+      },
+      circle: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
       cleaned: {
         type: DataTypes.BOOLEAN,
         allowNull: false,
@@ -70,6 +85,10 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.STRING,
         allowNull: true,
         defaultValue: "",
+      },
+      weight: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
       },
     },
     {

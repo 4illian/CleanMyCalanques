@@ -125,11 +125,6 @@
                     "field": "cleanedAt",
                     "seqType": "Sequelize.STRING"
                 },
-                "weight": {
-                    "allowNull": true,
-                    "field": "weight",
-                    "seqType": "Sequelize.INTEGER"
-                },
                 "updatedAt": {
                     "allowNull": false,
                     "field": "updatedAt",
@@ -142,5 +137,5 @@
     "path": "/Users/serge/Documents/Serge/hackathon/CleanMyCalanques/eco4marseille-nodejs/project/migrations/_current.json",
     "backupPath": "/Users/serge/Documents/Serge/hackathon/CleanMyCalanques/eco4marseille-nodejs/project/migrations/_current_bak.json",
     "exists": true,
-    "revision": 3
+    "revision": 2
 }
