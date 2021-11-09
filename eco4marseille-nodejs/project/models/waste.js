@@ -67,8 +67,9 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: false,
       },
       cleanedAt: {
-        type: DataTypes.DATE,
-        allowNull: false,
+        type: DataTypes.STRING,
+        allowNull: true,
+        defaultValue: "",
       },
     },
     {

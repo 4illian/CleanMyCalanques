@@ -1,5 +1,5 @@
 const jwt = require("jsonwebtoken");
-const userService = require("../user/service/user");
+const userService = require("../controller/user");
 
 const config = process.env;
 
@@ -12,8 +12,8 @@ const verifyToken = async (req, res, next) => {
   }
   try {
     const decoded = jwt.verify(token, "RANDOM_TOKEN_SECRET");
-    console.log(decoded);
-    const user = await userService.findOneById(decoded.userId);
+    //console.log(decoded);
+    const user = await userService.findOneByIdForMiddleware(decoded.userId);
 
     req.user = user;
   } catch (err) {

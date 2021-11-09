@@ -65,6 +65,19 @@ exports.findOneById = async (req, res, next) => {
   }
 };
 
+exports.findOneByIdForMiddleware = async (id, res) => {
+  try {
+    const user = await model.user.findOne({
+      where: { id: id },
+      include: { all: true, nested: true },
+    });
+    return user;
+  } catch (e) {
+    console.log(e);
+    throw "User not find";
+  }
+};
+
 exports.login = async (req, res) => {
   const data = req.body;
   console.log(data);
