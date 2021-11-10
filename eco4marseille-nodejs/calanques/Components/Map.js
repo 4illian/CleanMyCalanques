@@ -68,10 +68,10 @@ export default function Map() {
           icon={require('../Assets/blue.png')}
         >
           <MapView.Callout>
-          <View style={{ width: 200, height: 100, borderRadius: 25, flex: 1 }}>
-              <Text style={{ textAlign: "center", fontWeight: "bold", fontSize: 17 }}>Clean My Calanques</Text>
-              <Text style={{ textAlign: "center", fontSize: 13 }}>Action de ramassage !</Text>
-              <Text style={{marginTop: 25, fontStyle: "italic", fontWeight: "bold"}}>15/11/2021</Text>
+            <View style={{ width: 200, height: 100, borderRadius: 25, flex: 1 }}>
+              <Text style={{ textAlign: "center", fontWeight: "bold", fontSize: 17 }}>Les Goudes</Text>
+              <Text style={{ textAlign: "center", fontSize: 13, fontStyle: "italic", fontWeight: "bold" }}>Organisé par {"\n"} Clean My Calanques </Text>
+              <Text style={{ marginTop: 25, fontStyle: "italic", fontWeight: "bold" }}>15/11/2021</Text>
             </View>
           </MapView.Callout>
         </MapView.Marker>
@@ -84,10 +84,10 @@ export default function Map() {
           icon={require('../Assets/blue.png')}
         >
           <MapView.Callout>
-          <View style={{ width: 200, height: 100, borderRadius: 25, flex: 1 }}>
-              <Text style={{ textAlign: "center", fontWeight: "bold", fontSize: 17 }}>Clean My Calanques</Text>
-              <Text style={{ textAlign: "center", fontSize: 13 }}>Action de ramassage !</Text>
-              <Text style={{marginTop: 25, fontStyle: "italic", fontWeight: "bold"}}>20/11/2021</Text>
+            <View style={{ width: 200, height: 100, borderRadius: 25, flex: 1 }}>
+              <Text style={{ textAlign: "center", fontWeight: "bold", fontSize: 17 }}>Plages du Prophète</Text>
+              <Text style={{ textAlign: "center", fontSize: 13 }}>Organisé par: {"\n"} Clean My Calanques</Text>
+              <Text style={{ marginTop: 25, fontStyle: "italic", fontWeight: "bold" }}>20/11/2021</Text>
             </View>
           </MapView.Callout>
         </MapView.Marker>
@@ -111,9 +111,9 @@ export default function Map() {
         >
           <MapView.Callout>
             <View style={{ width: 200, height: 100, borderRadius: 25, flex: 1 }}>
-                <Text style={{ textAlign: "center", fontWeight: "bold", fontSize: 17 }}>Nettoyage après un Dimanche</Text>
-                <Text style={{ textAlign: "center", fontSize: 13 }}>Collectes de plusieurs déchets sur la plage</Text>
-                <Text style={{marginTop: 8, fontStyle: "italic", fontWeight: "bold"}}>10/11/2021</Text>
+              <Text style={{ textAlign: "center", fontWeight: "bold", fontSize: 17 }}>Nettoyage après un Dimanche</Text>
+              <Text style={{ textAlign: "center", fontSize: 13 }}>Collecte de plusieurs déchets sur les plages alentours</Text>
+              <Text style={{ marginTop: 8, fontStyle: "italic", fontWeight: "bold" }}>10/11/2021</Text>
             </View>
           </MapView.Callout>
         </MapView.Marker>
@@ -139,9 +139,9 @@ export default function Map() {
         >
           <MapView.Callout>
             <View style={{ width: 200, height: 100, borderRadius: 25, flex: 1 }}>
-              <Text style={{ textAlign: "center", fontWeight: "bold", fontSize: 17 }}>Calanques de Sormiou</Text>
-              <Text style={{ textAlign: "center", fontSize: 13 }}>Filets de pêches en quantité les rochers</Text>
-              <Text style={{marginTop: 20, fontStyle: "italic", fontWeight: "bold"}}>9/11/2021</Text>
+              <Text style={{ textAlign: "center", fontWeight: "bold", fontSize: 17, marginBottom: 5 }}>Calanques de Sormiou</Text>
+              <Text style={{ textAlign: "center", fontSize: 13 }}>Filets de pêches en quantité sur les rochers</Text>
+              <Text style={{ marginTop: 20, fontStyle: "italic", fontWeight: "bold" }}>9/11/2021</Text>
             </View>
           </MapView.Callout>
         </MapView.Marker>
@@ -167,9 +167,9 @@ export default function Map() {
         >
           <MapView.Callout>
             <View style={{ width: 200, height: 100, borderRadius: 25, flex: 1 }}>
-              <Text style={{ textAlign: "center", fontWeight: "bold", fontSize: 17 }}>Calanques de Port Pin</Text>
-              <Text style={{ textAlign: "center", fontSize: 13 }}>Plusieurs déchets oublié au abords de la calanques</Text>
-              <Text style={{marginTop: 20, fontStyle: "italic", fontWeight: "bold"}}>10/11/2021</Text>
+              <Text style={{ textAlign: "center", fontWeight: "bold", fontSize: 17, marginBottom: 5 }}>Calanques de Port Pin</Text>
+              <Text style={{ textAlign: "center", fontSize: 13 }}>Plusieurs déchets oubliés au abords de la calanque</Text>
+              <Text style={{ marginTop: 20, fontStyle: "italic", fontWeight: "bold" }}>10/11/2021</Text>
             </View>
           </MapView.Callout>
         </MapView.Marker>
@@ -195,9 +195,9 @@ export default function Map() {
         >
           <MapView.Callout>
             <View style={{ width: 200, height: 100, borderRadius: 25, flex: 1 }}>
-              <Text style={{ textAlign: "center", fontWeight: "bold", fontSize: 17 }}>Dimanche île du frioul</Text>
-              <Text style={{ textAlign: "center", fontSize: 13 }}>Plusieurs déchets échoué sure les plages de l'île</Text>
-              <Text style={{marginTop: 20, fontStyle: "italic", fontWeight: "bold"}}>9/11/2021</Text>
+              <Text style={{ textAlign: "center", fontWeight: "bold", fontSize: 17, marginBottom: 5 }}>Dimanche île du frioul</Text>
+              <Text style={{ textAlign: "center", fontSize: 13 }}>Plusieurs déchets échoué sur les plages de l'île</Text>
+              <Text style={{ marginTop: 20, fontStyle: "italic", fontWeight: "bold" }}>9/11/2021</Text>
             </View>
           </MapView.Callout>
         </MapView.Marker>
@@ -225,9 +225,9 @@ export default function Map() {
         >
           <MapView.Callout>
             <View style={{ width: 200, height: 100, borderRadius: 25, flex: 1 }}>
-              <Text style={{ textAlign: "center", fontWeight: "bold", fontSize: 17 }}>Sacs de poubelles au parc</Text>
-              <Text style={{ textAlign: "center", fontSize: 13 }}>Plusieurs sacs de poubelles entassées</Text>
-              <Text style={{marginTop: 20, fontStyle: "italic", fontWeight: "bold"}}>10/11/2021</Text>
+              <Text style={{ textAlign: "center", fontWeight: "bold", fontSize: 17, marginBottom: 5 }}>Sacs de poubelles au parc</Text>
+              <Text style={{ textAlign: "center", fontSize: 13 }}>Sacs de poubelles entassées</Text>
+              <Text style={{ marginTop: 20, fontStyle: "italic", fontWeight: "bold" }}>10/11/2021</Text>
             </View>
           </MapView.Callout>
         </MapView.Marker>
@@ -256,10 +256,10 @@ export default function Map() {
           <MapView.Callout>
             <View>
               <View style={{ width: 200, height: 100, borderRadius: 25, flex: 1 }}>
-                <Text style={{ textAlign: "center", fontWeight: "bold", fontSize: 16 }}>Nettoyage Post-Match Gagné</Text>
+                <Text style={{ textAlign: "center", fontWeight: "bold", fontSize: 16, marginBottom: 5 }}>Nettoyage Post-Match Gagné</Text>
 
                 <Text style={{ textAlign: "center", fontSize: 12 }}>Après la victoire de l'OM, nettoyage du stade avec le staff pendant 4h</Text>
-                <Text style={{marginTop: 13, fontStyle: "italic", fontWeight: "bold"}}>10/11/2021</Text>
+                <Text style={{ marginTop: 13, fontStyle: "italic", fontWeight: "bold" }}>10/11/2021</Text>
                 {/* <Image source={require('../Assets/user.png')} resizeMode='contain' tintColor='black' /> */}
               </View>
             </View>
@@ -274,13 +274,13 @@ export default function Map() {
         <Text style={{ color: "white" }}>Poster</Text>
       </TouchableOpacity>
 
-{/* 
+      {/* 
       <TouchableOpacity onPress={() => RootNavigation.navigate('Signalement')} style={{ position: 'absolute', bottom: 60, right: 10, width: 70, height: 70, zIndex: 2, backgroundColor: "rgba(50, 185, 187, 0.7)", padding: 15, borderRadius: 50, flex: 1, alignItems: "center" }} >
         <Image source={require('../Assets/camera.png')} resizeMode='contain' style={{ flex: 1, width: "100%" }} tintColor="white" />
         <Text style={{ color: "white" }}>Poster</Text>
       </TouchableOpacity> */}
 
-      
+
       {/* <View
       >
         <Text style={{
@@ -332,7 +332,7 @@ export default function Map() {
           </TouchableOpacity>
         </View>
       </View> */}
-    
+
     </View>
   );
 }

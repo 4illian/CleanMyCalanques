@@ -1,6 +1,6 @@
 import * as React from "react";
 import { useState } from "react";
-import { View, Text, Dimensions, Button, TextInput, TouchableOpacity } from "react-native";
+import { View, Text, Dimensions, Button, TextInput, TouchableOpacity, Image } from "react-native";
 import Map from "../Components/Map"
 import Graph from "../Components/Graph"
 import Piechart from "../Components/Piechart"
@@ -22,7 +22,6 @@ export default function Signalement({ navigation }) {
             const value = await AsyncStorage.getItem(index)
             if (value !== null) {
 
-                console.log("kzjhfjbijfb");
                 console.log(value);
                 // value previously stored
             }
@@ -53,10 +52,10 @@ export default function Signalement({ navigation }) {
             <Text style={{
                 marginTop: 200,
                 marginBottom: 30,
-                fontSize: 17,
+                fontSize: 20,
                 fontWeight: "bold"
             }}>
-                Description des objets trouvés
+                Description du dépôt
             </Text>
 
             <TextInput
@@ -118,6 +117,13 @@ export default function Signalement({ navigation }) {
                 placeholderTextColor="#999"
             />
 
+            <View style={{backgroundColor: "#32b9bb", marginBottom: 10, borderRadius: 5, width: 60, height: 60, alignItems: "center", paddingBottom: 15, textAlign: "center"}}>
+                <Image source={require('../Assets/upload.png')} style={{width: "70%", height: "70%", marginTop: 6}} tintColor={"white"} />
+                <Text style={{color: "white"}}>Image</Text>
+            </View>
+
+
+
 
             {/* <TextInput
                 // ref={node => {
@@ -150,6 +156,7 @@ export default function Signalement({ navigation }) {
                     padding: 10,
                     textAlign: "center",
                     width: 150,
+                    borderRadius: 5
                 }}>ENREGISTRER</Text>
             </TouchableOpacity>
             <TouchableOpacity onPress={() => navigation.navigate('Home', { formDescription: "Nettoyage Post-Match Gagné" })} style={{ width: "20%", alignItems: 'center' }} >
