@@ -40,7 +40,10 @@ exports.getAll = async (req, res, next) => {
 };
 
 exports.findOneByEmail = async (data) => {
+
   try {
+
+    console.log("FBE " + data.email);
     const email = data.email;
     const user = await model.user.findOne({ where: { email: email } });
     console.log(user);
@@ -79,20 +82,15 @@ exports.findOneByIdForMiddleware = async (id, res) => {
 };
 
 exports.login = async (req, res) => {
-  const data = req.body;
-  console.log(data);
+
+  const data = req.body
   try {
     const user = await this.findOneByEmail(data);
-    console.log(user);
-
-    console.log(user.password);
-    console.log(data.password);
 
     const result = bcrypt.compareSync(data.password, user.password);
     console.log(result);
 
     if (result) {
-      console.log(user.password);
 
       const jwtCreate = jwt.sign(
         { userId: user.id, username: user.username, isAdmin: user.admin },

@@ -36,3 +36,5 @@ app.get("/wastesbyuser", auth, wasteController.wastesByUser);
 app.get("/nbofwastes", wasteController.nbOfWastes);
 app.get("/cleanedbyuser", auth, wasteController.cleanedByUser);
 app.get("/nbofcleans", wasteController.nbOfCleans);
+
+app.use(express.urlencoded({extended: true}))

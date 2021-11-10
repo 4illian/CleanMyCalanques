@@ -6,7 +6,9 @@ import {
 
 export default function Graph() {
   return (
-    <View>
+    <View
+    
+    >
         {/* <Text style={{
           marginLeft: "auto",
           marginRight: "auto",
@@ -18,12 +20,12 @@ export default function Graph() {
             datasets: [
               {
                 data: [
-                  Math.random() * 100,
-                  Math.random() * 100,
-                  Math.random() * 100,
-                  Math.random() * 100,
-                  Math.random() * 100,
-                  Math.random() * 100
+                  Math.random() * 20,
+                  Math.random() * 12,
+                  Math.random() * 60,
+                  Math.random() * 22,
+                  Math.random() * 15,
+                  Math.random() * 9
                 ]
               }
             ]
@@ -52,7 +54,10 @@ export default function Graph() {
           bezier
           style={{
             marginVertical: 8,
-            borderRadius: 16
+            borderRadius: 16,
+            // width: Dimensions.get("window").width/0.8,
+            marginLeft: 20,
+            marginRight: 20
           }}
         />
       </View>
