@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { View, Text, Dimensions, TouchableOpacity, Image } from "react-native";
 import StatsImg from "../Assets/stats.png"
-//import * as navigation from './navigation';
+import * as RootNavigation from './rootNavigation';
 
 export default function Bottombar({ navigation }) {
 
@@ -19,17 +19,17 @@ export default function Bottombar({ navigation }) {
                 <Image source={require('../Assets/cmc.png')} resizeMode='contain' style={{ flex: .8 }} tintColor="white" />
             </View>
 
-            <TouchableOpacity onPress={() => navigation.navigate('Home')} style={{ width: "18%", alignItems: 'center' }} >
+            <TouchableOpacity onPress={() => RootNavigation.navigate('Home')} style={{ width: "18%", alignItems: 'center' }} >
                 <Image source={require('../Assets/home.png')} resizeMode='contain' style={{ flex: .5 }} tintColor="white" />
                 <Text style={{ color: "white" }}>Accueil</Text>
             </TouchableOpacity>
 
-            <TouchableOpacity onPress={() => navigation.navigate('Stats')} style={{ width: "24%", alignItems: 'center' }} >
+            <TouchableOpacity onPress={() => RootNavigation.navigate('Stats')} style={{ width: "24%", alignItems: 'center' }} >
                 <Image source={require('../Assets/commu.png')} resizeMode='contain' style={{ flex: .5 }} tintColor="white" />
                 <Text style={{ color: "white" }}>Communauté</Text>
             </TouchableOpacity>
 
-            <TouchableOpacity onPress={() => navigation.navigate('User')} style={{ width: "18%", alignItems: 'center' }} >
+            <TouchableOpacity onPress={() => RootNavigation.navigate('User')} style={{ width: "18%", alignItems: 'center' }} >
                 <Image source={require('../Assets/user.png')} resizeMode='contain' style={{ flex: .5, width: "100%" }} tintColor="white" />
                 <Text style={{ color: "white" }}>Profil</Text>
             </TouchableOpacity>
