@@ -21,10 +21,7 @@ export default function Home({ navigation }) {
 
 
 
-      <TouchableOpacity onPress={() => navigation.navigate('Stats')} style={{ position: 'absolute', bottom: 60, right: 10, width: 70, height: 70, zIndex: 2, backgroundColor: "rgba(50, 185, 187, 0.7)", padding: 15, borderRadius: 50, flex: 1, alignItems: "center" }} >
-        <Image source={require('../Assets/camera.png')} resizeMode='contain' style={{ flex: 1, width: "100%" }} tintColor="white" />
-        <Text style={{ color: "white" }}>Poster</Text>
-      </TouchableOpacity>
+     
 
 
       {/* <TouchableOpacity onPress={() => navigation.navigate('User')} style={{ position: 'absolute', top: 60, right: 10, width: 55, height: 55, zIndex: 2, backgroundColor: "rgba(50, 185, 187, 0.7)", padding: 15, borderRadius: 50, flex: 1, alignItems: "center" }} >

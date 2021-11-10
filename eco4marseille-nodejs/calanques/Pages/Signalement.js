@@ -22,6 +22,7 @@ export default function Signalement({ navigation }) {
             const value = await AsyncStorage.getItem(index)
             if (value !== null) {
 
+                console.log("kzjhfjbijfb");
                 console.log(value);
                 // value previously stored
             }

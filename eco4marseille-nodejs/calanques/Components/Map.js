@@ -1,17 +1,20 @@
-import React, { Component, useEffect } from 'react';
-import { StyleSheet, Text, View, Dimensions, TextInput } from 'react-native';
+import React, { Component, useEffect, useState } from 'react';
+import { StyleSheet, Text, View, Dimensions, TextInput, Modal, TouchableOpacity, Image } from 'react-native';
 import MapView, { Marker, AnimatedRegion } from "react-native-maps";
-
+import AsyncStorage from '@react-native-async-storage/async-storage'
+import * as RootNavigation from './rootNavigation';
+function useForceUpdate() {
+  const [value, setValue] = useState(0); // integer state
+  return () => setValue(value => value + 1); // update the state to force render
+}
 export default function Map() {
+  const [description, setDescription] = React.useState('');
   const [checkStyle, setCheckStyle] = React.useState('');
-  const state = {
-    mapRegion: null,
-    currentLatitude: null,
-    currentLongitude: null,
-    LATLNG: {
-      latitude: -35,
-      longitude: 120
-    },
+  const forceUpdate = useForceUpdate();
+
+  function useForceUpdate() {
+    const [value, setValue] = useState(0); // integer state
+    return () => setValue(value => value + 1); // update the state to force render
   }
 
   const removeItemValue = async (key) => {
@@ -45,8 +48,6 @@ export default function Map() {
     // Met à jour le titre du document via l’API du navigateur
     getData('description')
   });
-
-
   return (
     <View style={styles.container} >
       <MapView
@@ -242,7 +243,7 @@ export default function Map() {
           strokeWidth={2}
           strokeColor="transparent"
 
-          fillColor={checkStyle ? "rgba(137, 196, 244, 0.7)" : "rgba(0,0,0,0)"}
+          fillColor={checkStyle ? "rgba(242, 38, 19, 0.4)" : "rgba(0,0,0,0)"}
         />
         <MapView.Marker
           coordinate={{ latitude: 43.269788, longitude: 5.388521 }}
@@ -266,6 +267,54 @@ export default function Map() {
         </MapView.Marker>
 
       </MapView>
+
+
+      <TouchableOpacity onPress={() => RootNavigation.navigate('Signalement')} style={{ position: 'absolute', bottom: 60, right: 10, width: 70, height: 70, zIndex: 2, backgroundColor: "rgba(50, 185, 187, 0.7)", padding: 15, borderRadius: 50, flex: 1, alignItems: "center" }} >
+        <Image source={require('../Assets/camera.png')} resizeMode='contain' style={{ flex: 1, width: "100%" }} tintColor="white" />
+        <Text style={{ color: "white" }}>Poster</Text>
+      </TouchableOpacity>
+
+{/* 
+      <TouchableOpacity onPress={() => RootNavigation.navigate('Signalement')} style={{ position: 'absolute', bottom: 60, right: 10, width: 70, height: 70, zIndex: 2, backgroundColor: "rgba(50, 185, 187, 0.7)", padding: 15, borderRadius: 50, flex: 1, alignItems: "center" }} >
+        <Image source={require('../Assets/camera.png')} resizeMode='contain' style={{ flex: 1, width: "100%" }} tintColor="white" />
+        <Text style={{ color: "white" }}>Poster</Text>
+      </TouchableOpacity> */}
+
+      
+      {/* <View
+      >
+        <Text style={{
+          marginTop: 100
+        }}>
+          Connexion
+        </Text>
+
+        <TextInput
+          maxLength={256}
+          placeholder="Description"
+          autoCapitalize="none"
+          autoCorrect={false}
+          returnKeyType="next"
+          defaultValue={description}
+          onChangeText={description => setDescription(description)}
+          underlineColorAndroid="transparent"
+          placeholderTextColor="#999"
+        />
+
+
+        <TouchableOpacity
+
+          onPress={onPressLogin}
+        >
+          <Text style={{
+            backgroundColor: "blue",
+            padding: 10
+          }}>ENREGISTRER</Text>
+        </TouchableOpacity>
+
+
+
+      </View> */}
       {/* <View style={styles.allNonMapThings}>
         <View style={styles.inputContainer}>
           <TextInput
@@ -283,6 +332,7 @@ export default function Map() {
           </TouchableOpacity>
         </View>
       </View> */}
+    
     </View>
   );
 }
@@ -293,12 +343,10 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
-    borderBottomColor: 'grey',
-    borderBottomWidth: 1,
   },
   map: {
     width: Dimensions.get('window').width,
-    // height: Dimensions.get('window').height,
-    height: Dimensions.get("window").height,
+    height: Dimensions.get('window').height,
+    // height: 500,
   },
 });

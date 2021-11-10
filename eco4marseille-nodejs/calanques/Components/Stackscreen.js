@@ -31,6 +31,9 @@ export default function StackScreen() {
         <Stack.Screen name="Stats" options={{headerShown: false}} >
       {props => <Stats {...props} />}
         </Stack.Screen>
+        <Stack.Screen name="Signalement" options={{headerShown: false}} >
+      {props => <Signalement {...props} />}
+        </Stack.Screen>
       {/* <Stack.Screen name="Stats" component={Stats} options={{headerShown: false}} /> */}
       {/* <Stack.Screen name="Signalement" component={Signalement} options={{headerShown: false}} /> */}
 
