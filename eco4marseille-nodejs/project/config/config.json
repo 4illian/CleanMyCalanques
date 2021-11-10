@@ -1,7 +1,7 @@
 {
   "development": {
-    "username": "root",
-
+    "username": "rootmac",
+    "password": "wacademie",
     "database": "db",
     "host": "localhost",
     "port": 3306,
