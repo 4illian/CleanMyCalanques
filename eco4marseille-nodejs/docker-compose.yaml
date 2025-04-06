@@ -17,7 +17,8 @@ services:
       - eco4marseille
 
   db:
-    image: mysql:5.7
+    image: mysql:8.0
+    platform: linux/arm64/v8
     env_file: ./.env
     environment:
       MYSQL_DATABASE: $MYSQL_DATABASE
